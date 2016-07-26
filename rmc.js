@@ -56,4 +56,4 @@ function convert() {
 var deleteFunction = function() {
   $("#searchbox").val("");
   $("#articles").empty();  
-}
+};
