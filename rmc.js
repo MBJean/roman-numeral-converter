@@ -11,8 +11,12 @@ $('#delete').click( a => {
 
 function converterController() {
   let num = $("#searchbox").val().replace(",", "");
-  let convertedNum = converter(num);
-  let html = num > 0 && num < 5000 ? convertedNum: "Please input a valid number.";
+  let html = 
+      Number.isInteger(+num)
+      && num > 0 
+      && num < 5000 
+        ? converter(parseInt(num))
+        : "Please input a valid number.";
   $("#articles").html("<div class='article'>" + html + "</div>");
 }
 
